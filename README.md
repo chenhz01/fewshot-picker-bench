@@ -2,6 +2,8 @@
 
 fewshot-picker-bench is a deterministic few-shot example picker: it ranks a pool of examples against your query with TF-IDF, re-ranks for diversity with MMR, and self-reports the quality of its own selection. Use it when you need reproducible prompt-example selection offline — same input, same picks, every run, no model calls. Confidence: High (≥80%) for determinism, demonstrated by the 68-check suite.
 
+<p align="center"><img src="docs/demo.gif" alt="demo" width="720"></p>
+
 ## Problem
 
 Few-shot prompting quality depends on *which* examples you put in the prompt. Picking by hand does not scale; picking with an LLM or an embedding API is non-deterministic, costs money, and cannot run offline. Teams then ship prompts whose examples silently drift between runs, making prompt regressions impossible to reproduce. What is needed is a transparent selector whose every choice is explainable and whose selection quality is measurable.
